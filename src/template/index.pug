@@ -1,0 +1,27 @@
+doctype html
+
+html
+  include ./config.pug
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href=STYLESHEET_HREF)
+    link(rel='shortcut icon', href=ICON_HREF)
+    title
+      block title_name
+        | lclimir
+  body
+    block navbar
+      nav
+        a(href='/') LiaoxyuCM
+        .pc
+          a(href='https://github.com/LiaoxyuCM') GitHub
+          a(href='https://liaoxyucm.top/friendlinks') 友链
+    main
+      block content
+        p No anything provided
+    block footer
+      footer
+        p= "&copy; LiaoxyuCM × FrontMeteor 2024-2026"
+
+

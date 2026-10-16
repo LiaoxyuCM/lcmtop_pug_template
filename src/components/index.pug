@@ -1,0 +1,30 @@
+mixin card(title, content, link, target)
+  a(href=link, target=target)
+    .card
+      if block
+        block
+      h3= title
+      p.description= content
+
+mixin cardfriendlink(title, content, link, target, imagesrc)
+  +card(title, content, link, target)
+    img(src=imagesrc, style="width:40px;height:40px;margin-right:3px")
+
+mixin timelineitem(datetime, content)
+  .timeline-item
+    .timeline-dot
+    .timeline-date= datetime
+    .timeline-content
+      p= content
+
+mixin selectbar(choices, selectedidx)
+  .selectbar
+    each choice, index in choices
+      div(class="choice" + (selectedidx === index ? " selected":""))= choice
+
+mixin codefield(code)
+  .codefield
+    each ln, index in code.split("\n")
+      .codeline
+        p.codelnnumber= (index + 1) + "\u00A0"
+        p.code= ln
